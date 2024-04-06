@@ -5,7 +5,9 @@ Basket Splitter is a Java library designed to optimize the delivery method for a
 ## Key Features
 
 - **Delivery Grouping**: Splits items in a shopping basket into delivery groups based on predefined delivery methods, optimizing for the smallest number of deliveries.
+
 - **Configurable Delivery Methods**: Uses a JSON configuration file to define possible delivery methods for all offered products.
+
 - **Optimization**: Aims to create the largest possible delivery groups to reduce the likelihood of items being left in the basket.
 
 ## Getting Started 🚀
@@ -19,16 +21,18 @@ Basket Splitter is a Java library designed to optimize the delivery method for a
 To use BasketSplitter in your project, follow these steps to add the library:
 
 1. Download the BasketSplitter JAR file from the `distributions/ProjectWithFatJarAndSources-1.0` section on GitHub.
+
 2. Add the JAR file to your project's build path.
 
+#### For Gradle projects:
 
-**For Gradle projects:**
+First, place the JAR in your project's `libs` folder. Then, add the following to your `build.gradle` file:
 
-   First, place the JAR in your project's `libs` folder. Then, add the following to your `build.gradle` file:
-   ```sh
-   dependencies {
-       implementation fileTree(dir: 'libs', include: ['*.jar'])
-   } 
+```sh
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
    ```
 
 
@@ -57,11 +61,14 @@ Then, add the following dependency to your `pom.xml`:
 
 2. **Create the Basket Splitter**
 
-   Use the `BasketSplitter` class in your Java code - initialize it, providing the path to your configuration file in the constructor. 
-   Then call the public `split` method, providing the list of product names (`List<String> products`). 
-   The `split` method returns the `Map<String, List<String>>` with the optimized delivery groups and the corresponding lists of products.
+Use the `BasketSplitter` class in your Java code - initialize it, providing the path to your configuration file in the constructor.
 
-   ```java
+Then call the public `split` method, providing the list of product names (`List<String> products`). 
+
+The split method returns the `Map<String, List<String>>` with the optimized delivery groups and the corresponding lists of products.
+
+```java
+
      String absolutePathToConfigFile = "path/to/config.json";
 
      BasketSplitter basketSplitter = new BasketSplitter(absolutePathToConfigFile);
@@ -75,8 +82,11 @@ Then, add the following dependency to your `pom.xml`:
      // Print the delivery groups to the console
      System.out.println("Delivery Groups:");
      deliveryGroups.forEach((deliveryMethod, products) -> System.out.println(deliveryMethod + ": " + products));
-     ```
-    Json configuration file example:
+
+```
+
+Json configuration file example:
+        
    ```json
    {
    "Cookies Oatmeal Raisin": ["Pick-up point", "Parcel locker"],
