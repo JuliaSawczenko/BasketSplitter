@@ -28,12 +28,18 @@ task fatJar(type: Jar) {
     archiveBaseName = 'BasketFatJar'
     archiveVersion = '1.0'
     archiveClassifier = 'all'
-
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
-
     from sourceSets.main.output
+    from { configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) } }
+}
 
-    from {
-        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+
+task zipAll(type: Zip) {
+    from tasks.named('fatJar').get()
+    from('src') {
+        into 'src'
     }
+    archiveBaseName.set('ProjectWithFatJarAndSources')
+    archiveVersion.set('1.0')
+    destinationDirectory.set(file("distributions"))
 }
