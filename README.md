@@ -20,7 +20,7 @@ Basket Splitter is a Java library designed to optimize the delivery method for a
 
 To use BasketSplitter in your project, follow these steps to add the library:
 
-1. Download the BasketSplitter JAR file from the `distributions/ProjectWithFatJarAndSources-1.0` section on GitHub.
+1. Download the BasketSplitter JAR file from the `distributions` section on GitHub.
 
 2. Add the JAR file to your project's build path.
 
