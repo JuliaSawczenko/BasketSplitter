@@ -39,6 +39,15 @@ task zipAll(type: Zip) {
     from('src') {
         into 'src'
     }
+    from('build.gradle')
+    from('settings.gradle')
+    from('gradlew')
+    from('gradlew.bat')
+    from('README.md')
+    from('gradle/wrapper') {
+        include '**'
+        into 'gradle/wrapper'
+    }
     archiveBaseName.set('ProjectWithFatJarAndSources')
     archiveVersion.set('1.0')
     destinationDirectory.set(file("distributions"))
