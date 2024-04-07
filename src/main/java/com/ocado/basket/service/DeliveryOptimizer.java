@@ -1,6 +1,5 @@
 package com.ocado.basket.service;
 
-import com.ocado.basket.exception.InvalidProductException;
 import com.ocado.basket.model.DeliveryMethod;
 import com.ocado.basket.model.Product;
 
@@ -15,7 +14,7 @@ public class DeliveryOptimizer {
     }
 
     // Group products by delivery method based on the configuration.
-    public Map<DeliveryMethod, List<Product>> getDeliveryGroups(List<String> productNames) throws InvalidProductException {
+    public Map<DeliveryMethod, List<Product>> getDeliveryGroups(List<String> productNames) {
         Map<DeliveryMethod, Set<Product>> deliveryMethodWithProducts = new HashMap<>();
 
         for (String productName : productNames) {

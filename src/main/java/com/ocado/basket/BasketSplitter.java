@@ -1,7 +1,6 @@
 package com.ocado.basket;
 
 import com.ocado.basket.exception.ConfigLoaderException;
-import com.ocado.basket.exception.InvalidProductException;
 import com.ocado.basket.model.Product;
 import com.ocado.basket.service.ConfigLoader;
 import com.ocado.basket.service.DeliveryMethodService;
@@ -25,12 +24,12 @@ public class BasketSplitter {
     }
 
     // Helper method
-    private static DeliveryOptimizer createDeliveryOptimizerFromConfig(String absolutePathToConfigFile) throws ConfigLoaderException {
+    private static DeliveryOptimizer createDeliveryOptimizerFromConfig(String absolutePathToConfigFile) {
         var deliveryMethodService = new DeliveryMethodService(ConfigLoader.loadConfig(absolutePathToConfigFile));
         return new DeliveryOptimizer(deliveryMethodService);
     }
 
-    public Map<String, List<String>> split(List<String> items) throws InvalidProductException {
+    public Map<String, List<String>> split(List<String> items) {
         if (items == null || items.isEmpty()) {
             throw new IllegalArgumentException("The list of items cannot be null or empty.");
         }

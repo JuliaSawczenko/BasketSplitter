@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 public class ConfigLoader {
 
-    public static Map<Product, List<DeliveryMethod>> loadConfig(String absolutePathToConfigFile) throws ConfigLoaderException {
+    public static Map<Product, List<DeliveryMethod>> loadConfig(String absolutePathToConfigFile) {
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, List<String>> rawConfig;
 
