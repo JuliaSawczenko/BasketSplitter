@@ -16,7 +16,6 @@ public class DeliveryMethodService {
     }
 
     public List<DeliveryMethod> getDeliveryMethodsForProduct(Product product) {
-
         if (!productsWithDeliveryMethods.containsKey(product)) {
             throw new InvalidProductException("Product " + product.name() + " is not found in the configuration file.");
         }

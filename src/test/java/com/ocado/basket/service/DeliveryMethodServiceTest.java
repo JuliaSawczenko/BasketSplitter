@@ -21,7 +21,7 @@ public class DeliveryMethodServiceTest {
     }
 
     @Test
-    void shouldReturnDeliveryMethods_WhenProductIsFound() throws InvalidProductException {
+    void shouldReturnDeliveryMethods_WhenProductIsFound() {
         // Given
         Product existingProduct = new Product("Fond - Chocolate");
 

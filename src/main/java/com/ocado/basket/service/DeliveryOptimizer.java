@@ -48,7 +48,7 @@ public class DeliveryOptimizer {
         while (!ranking.isEmpty()) {
             DeliveryMethod maxMethod = Collections.max(ranking.entrySet(), Map.Entry.comparingByValue()).getKey();
             Set<Product> potentialGroup = new HashSet<>(deliveryMethodWithProducts.get(maxMethod));
-            potentialGroup.removeIf(groupedProducts::contains); // Exclude already grouped products
+            potentialGroup.removeIf(groupedProducts::contains); // Exclude already grouped products.
 
             if (!potentialGroup.isEmpty()) {
                 optimizedGroups.put(maxMethod, new ArrayList<>(potentialGroup));

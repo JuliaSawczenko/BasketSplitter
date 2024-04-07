@@ -5,6 +5,7 @@ import com.ocado.basket.mocks.MockedValues;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
@@ -16,13 +17,13 @@ public class IntegrationTest {
     private BasketSplitter basketSplitter;
 
     @BeforeEach
-    void setUp() throws Exception {
+    void setUp() throws URISyntaxException {
         String pathToConfig = Paths.get(getClass().getResource("/validConfig.json").toURI()).toString();
         basketSplitter = new BasketSplitter(pathToConfig);
     }
 
     @Test
-    void shouldCorrectlySplitItemsBasedOnConfig() throws Exception {
+    void shouldCorrectlySplitItemsBasedOnConfig() {
         // Given
         List<String> items = MockedValues.PRODUCTS;
         Map<String, List<String>> expectedGroups = MockedValues.EXPECTED_GROUPS_STRING;

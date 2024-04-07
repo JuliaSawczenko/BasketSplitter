@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ConfigLoaderTest {
 
     @Test
-    void should_LoadConfigurationCorrectly_When_FileIsCorrect() throws URISyntaxException, ConfigLoaderException {
+    void should_LoadConfigurationCorrectly_When_FileIsCorrect() throws URISyntaxException {
         // Given
         String validPath = Paths.get(getClass().getResource("/validConfig.json").toURI()).toString();
 

@@ -42,7 +42,7 @@ public class DeliveryOptimizerTest {
 
 
     @Test
-    void shouldCorrectlyGroupProductsByDeliveryMethod() throws InvalidProductException {
+    void shouldCorrectlyGroupProductsByDeliveryMethod() {
         // Given
         List<String> productNames = MockedValues.PRODUCTS;
 
